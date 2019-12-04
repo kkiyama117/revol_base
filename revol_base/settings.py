@@ -26,7 +26,7 @@ SECRET_KEY = 'Please_replace_secret_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['localhost']
 INSTALLED_APPS = [
     'revol.apps.RevolConfig',
     'userble.apps.UserbleConfig',
+    'society.apps.SocietyConfig',
+    'placeholder.apps.PlaceholderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,6 +119,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -124,10 +130,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # models
-AUTH_USER_MODEL = 'userble.User'
+AUTH_USER_MODEL = 'revol.User'
 
-# Debug tool bar
 if DEBUG:
+    # Debug tool bar
     def show_toolbar(request):
         return True
 
@@ -143,3 +149,7 @@ if DEBUG:
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar,
     }
+
+    # email
+    # メールをコンソールに表示する
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
