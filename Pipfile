@@ -10,6 +10,7 @@ pytest-cov = "*"
 tox = "*"
 pytest-django = "*"
 django-webtest = "*"
+django-debug-toolbar = "*"
 
 [packages]
 django = ">=2.2"
