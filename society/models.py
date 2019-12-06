@@ -1,3 +1,4 @@
+import datetime
 from logging import getLogger
 
 from django.contrib.auth import get_user_model
@@ -50,7 +51,7 @@ class LogicalDeleteModel(models.Model):
 
             # 論理削除
             self.is_deleted = True
-            self.deleted_at = now()
+            self.deleted_at = datetime.datetime.now()
             self.save()
 
     def recover(self):
