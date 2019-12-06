@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'revol_base.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'dev.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -137,8 +137,7 @@ if DEBUG:
     def show_toolbar(request):
         return True
 
-
-    INSTALLED_APPS = INSTALLED_APPS+[
+    INSTALLED_APPS = INSTALLED_APPS + [
         'debug_toolbar',
     ]
     MIDDLEWARE += [

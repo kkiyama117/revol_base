@@ -11,9 +11,11 @@ tox = "*"
 pytest-django = "*"
 django-webtest = "*"
 django-debug-toolbar = "*"
+autopep8 = "*"
 
 [packages]
 django = ">=2.2"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
@@ -21,3 +23,4 @@ python_version = "3.7"
 [scripts]
 lint = "flake8 --show-source ."
 test = "tox"
+format = "autopep8 -aivr ."

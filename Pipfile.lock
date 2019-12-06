@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e954f450089d7f95aabf0132e5371c9c6c6b36afeafeb86988c09a432e54342f"
+            "sha256": "c730c0ac659ca22d46b00d98f88bfd1441436b18b56c3b9a488a27a12eaddd2b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,14 @@
             ],
             "index": "pypi",
             "version": "==3.0"
+        },
+        "djangorestframework": {
+            "hashes": [
+                "sha256:5488aed8f8df5ec1d70f04b2114abc52ae6729748a176c453313834a9ee179c8",
+                "sha256:dc81cbf9775c6898a580f6f1f387c4777d12bd87abf0f5406018d32ccae71090"
+            ],
+            "index": "pypi",
+            "version": "==3.10.3"
         },
         "pytz": {
             "hashes": [
@@ -60,6 +68,13 @@
                 "sha256:f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"
             ],
             "version": "==19.3.0"
+        },
+        "autopep8": {
+            "hashes": [
+                "sha256:4d8eec30cc81bc5617dbf1218201d770dc35629363547f17577c61683ccfb3ee"
+            ],
+            "index": "pypi",
+            "version": "==1.4.4"
         },
         "beautifulsoup4": {
             "hashes": [
@@ -154,11 +169,11 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:b044f07694ef14a6683b097ba56bd081dbc7cdc7c7fe46011e499dfecc082f21",
-                "sha256:e6ac600a142cf2db707b1998382cc7fc3b02befb7273876e01b8ad10b9652742"
+                "sha256:3a8b2dfd0a2c6a3636e7c016a7e54ae04b997d30e69d5eacdca7a6c2221a1402",
+                "sha256:41e688146d000891f32b1669e8573c57e39e5060e7f5f647aa617cd9a9568278"
             ],
             "markers": "python_version < '3.8'",
-            "version": "==1.1.0"
+            "version": "==1.2.0"
         },
         "mccabe": {
             "hashes": [
@@ -169,10 +184,10 @@
         },
         "more-itertools": {
             "hashes": [
-                "sha256:53ff73f186307d9c8ef17a9600309154a6ae27f25579e80af4db8f047ba14bc2",
-                "sha256:a0ea684c39bc4315ba7aae406596ef191fd84f873d2d2751f84d64e81a7a2d45"
+                "sha256:57cc732766f26ddc424a4ed76d837677777a03f557c7ebeecb7e2be2888ce702",
+                "sha256:a293dbdad9d4d22e1e70832b8dcab72aac20805f0fa0575aec27cab8841e09ff"
             ],
-            "version": "==8.0.0"
+            "version": "==8.0.1"
         },
         "packaging": {
             "hashes": [
