@@ -23,4 +23,4 @@ python_version = "3.7"
 [scripts]
 lint = "flake8 --show-source ."
 test = "tox"
-format = "autopep8 -aivr ."
+format = "autopep8 -aivr . & lint"
