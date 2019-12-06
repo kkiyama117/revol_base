@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'logical_delete.apps.LogicalDeleteConfig',
     'revol.apps.RevolConfig',
     'userble.apps.UserbleConfig',
     'society.apps.SocietyConfig',

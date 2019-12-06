@@ -12,3 +12,6 @@ class LogicalDeleteQuerySet(QuerySet):
         self._result_cache = None
 
     delete.alters_data = True
+
+    def hard_delete(self):
+        return super(LogicalDeleteQuerySet, self).delete()

@@ -1,6 +1,6 @@
 from django.db import models
 
-from society.queryset import LogicalDeleteQuerySet
+from logical_delete.queryset import LogicalDeleteQuerySet
 
 
 class LogicalDeleteManager(models.Manager):
