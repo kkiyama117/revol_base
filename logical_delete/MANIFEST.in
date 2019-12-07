@@ -1,4 +1,0 @@
-include README.rst
-include LICENSE
-recursive-include logical_delete/*
-recursive-include docs *

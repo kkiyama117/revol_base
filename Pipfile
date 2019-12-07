@@ -16,6 +16,7 @@ autopep8 = "*"
 [packages]
 django = ">=2.2"
 djangorestframework = "*"
+logical-delete = {git = "https://github.com/kkiyama117/django-logical-delete",ref = "v1.0.2"}
 
 [requires]
 python_version = "3.7"

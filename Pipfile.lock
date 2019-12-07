@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c730c0ac659ca22d46b00d98f88bfd1441436b18b56c3b9a488a27a12eaddd2b"
+            "sha256": "87b1ddfc9de14f4493bd261933ee79cc1690cc3e5c380a9bea4f4762e14a83cd"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,6 +38,10 @@
             ],
             "index": "pypi",
             "version": "==3.10.3"
+        },
+        "logical-delete": {
+            "git": "https://github.com/kkiyama117/django-logical-delete",
+            "ref": "3223b51f74ebf9e4b287bbf30b2b5d68aaee2e46"
         },
         "pytz": {
             "hashes": [
@@ -184,10 +188,10 @@
         },
         "more-itertools": {
             "hashes": [
-                "sha256:57cc732766f26ddc424a4ed76d837677777a03f557c7ebeecb7e2be2888ce702",
-                "sha256:a293dbdad9d4d22e1e70832b8dcab72aac20805f0fa0575aec27cab8841e09ff"
+                "sha256:b84b238cce0d9adad5ed87e745778d20a3f8487d0f0cb8b8a586816c7496458d",
+                "sha256:c833ef592a0324bcc6a60e48440da07645063c453880c9477ceb22490aec1564"
             ],
-            "version": "==8.0.1"
+            "version": "==8.0.2"
         },
         "packaging": {
             "hashes": [
