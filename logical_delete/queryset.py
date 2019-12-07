@@ -11,7 +11,14 @@ class LogicalDeleteQuerySet(QuerySet):
 
         self._result_cache = None
 
-    delete.alters_data = True
-
     def hard_delete(self):
         return super(LogicalDeleteQuerySet, self).delete()
+
+    def recover(self):
+        assert self.query.can_filter(), \
+            "Cannot use 'limit' or 'offset' with recover."
+        for i in self.all():
+            i.recover()
+        self._result_cache = None
+
+    delete.alters_data = True

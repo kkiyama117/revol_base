@@ -5,20 +5,36 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 # Create your models here.
+from django.utils import timezone
+
 from logical_delete.managers import LogicalDeleteManager
 
 logger = getLogger(__name__)
 
 
 class LogicalDeleteModel(models.Model):
+    def __init__(self, *args, **kwargs):
+        super(LogicalDeleteModel, self).__init__(*args, **kwargs)
+
     objects = LogicalDeleteManager()
-    #: 削除されたかどうか
-    is_deleted = models.BooleanField(default=False)
     #: 削除日時
-    deleted_at = models.DateTimeField(null=True, blank=True)
+    deleted_at = models.DateTimeField(null=True, blank=True, default=None)
+
+    @property
+    def deleted(self):
+        return self.deleted_at is not None
+
+    @deleted.setter
+    def deleted(self, d):
+        """Called via the admin interface
+         (if user checks the "deleted" checkbox)"""
+        if d and not self.deleted_at:
+            self.deleted_at = timezone.now()
+        elif not d and self.deleted_at:
+            self.deleted_at = None
 
     def delete(self, using=None, **kwargs):
-        if self.is_deleted:
+        if self.deleted:
             logger.debug("Hard deleting skipped %s: %s", type(self), self)
         else:
             logger.debug("Soft deleting %s: %s", type(self), self)
@@ -50,7 +66,6 @@ class LogicalDeleteModel(models.Model):
                     # obj.delete()
 
             # 論理削除
-            self.is_deleted = True
             self.deleted_at = datetime.datetime.now()
             self.save()
 
@@ -81,7 +96,6 @@ class LogicalDeleteModel(models.Model):
                     pass
 
         # 復旧
-        self.is_deleted = False
         self.deleted_at = None
         self.save()
 
